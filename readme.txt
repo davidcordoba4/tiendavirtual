@@ -46,6 +46,6 @@ TiendaVirtual.bak
 
 Para correr backend localmente colocar como proyecto de inicio WebApiTiendaVirtual
 
-Las pruebas unitarias se encuentran en el proyecto UnitTestTiendaVirtual, en caso de que no ejecuten de forma correcta intentar recompilar toda la solución.
+Las pruebas unitarias se encuentran en el proyecto UnitTestTiendaVirtual, en caso de que no ejecuten de forma correcta o ejecute correctamente backend de forma local intentar limpiar solución y luego recompilar toda la solución.
 
 Para correcta compilación y ejecución de backend abrir solución en Visual Studio con permisos de administrador.
