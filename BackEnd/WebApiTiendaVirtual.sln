@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Core", "TiendaVirtual.Core\TiendaVirtual.Core.csproj", "{257FA672-40B9-40E5-9937-FAA6A8CB7EB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Entities", "TiendaVirtual.Entities\TiendaVirtual.Entities.csproj", "{23850250-697D-4616-8620-96F7EDEEDB66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Shared", "TiendaVirtual.Shared\TiendaVirtual.Shared.csproj", "{346D36A1-3B9B-4A17-AC19-CFB02B89579F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiTiendaVirtual", "WebApiTiendaVirtual\WebApiTiendaVirtual.csproj", "{E4B12F31-0715-4EDF-9993-DD60D1EC951C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestTiendaVirtual", "UnitTestTiendaVirtual\UnitTestTiendaVirtual.csproj", "{D80F1619-8841-4A81-A1E3-62FC1BABA0C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaVirtual.Repositories", "TiendaVirtual.Repositories\TiendaVirtual.Repositories.csproj", "{D554A9A6-9BEB-47A1-A1B8-5781131D2693}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{257FA672-40B9-40E5-9937-FAA6A8CB7EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{257FA672-40B9-40E5-9937-FAA6A8CB7EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{257FA672-40B9-40E5-9937-FAA6A8CB7EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{257FA672-40B9-40E5-9937-FAA6A8CB7EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23850250-697D-4616-8620-96F7EDEEDB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23850250-697D-4616-8620-96F7EDEEDB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23850250-697D-4616-8620-96F7EDEEDB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23850250-697D-4616-8620-96F7EDEEDB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346D36A1-3B9B-4A17-AC19-CFB02B89579F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346D36A1-3B9B-4A17-AC19-CFB02B89579F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346D36A1-3B9B-4A17-AC19-CFB02B89579F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346D36A1-3B9B-4A17-AC19-CFB02B89579F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B12F31-0715-4EDF-9993-DD60D1EC951C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B12F31-0715-4EDF-9993-DD60D1EC951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B12F31-0715-4EDF-9993-DD60D1EC951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B12F31-0715-4EDF-9993-DD60D1EC951C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80F1619-8841-4A81-A1E3-62FC1BABA0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80F1619-8841-4A81-A1E3-62FC1BABA0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80F1619-8841-4A81-A1E3-62FC1BABA0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80F1619-8841-4A81-A1E3-62FC1BABA0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D554A9A6-9BEB-47A1-A1B8-5781131D2693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D554A9A6-9BEB-47A1-A1B8-5781131D2693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D554A9A6-9BEB-47A1-A1B8-5781131D2693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D554A9A6-9BEB-47A1-A1B8-5781131D2693}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E2F430D-4705-49AE-9EBA-0233A69E7FBB}
+	EndGlobalSection
+EndGlobal

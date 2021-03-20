@@ -1,0 +1,27 @@
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.flex {
+
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex > div {
+        flex: 1 1 auto;
+        width: 30px; /* To make the transition work nicely. (Transitions to/from
+                        "width:auto" are buggy in Gecko and Webkit, at least.
+                        See http://bugzil.la/731886 for more info.) */
+        transition: width 0.7s ease-out;
+    }
+
+    .flex > div fieldset{
+          height: 100% !important;
+        }
+div.flex {
+  margin-bottom: 0.5em;
+}

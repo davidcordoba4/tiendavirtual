@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TiendaVirtual.Entities</name>
+    </assembly>
+    <members>
+        <member name="M:TiendaVirtual.Entities.Interfaces.ITiendaVirtualRepositorio.ObtenerOrdenesTienda">
+            <summary>
+            Método ObtenerOrdenesTienda.
+            </summary>        
+            <returns>Task{List{Orders}}</returns>
+        </member>
+        <member name="M:TiendaVirtual.Entities.Interfaces.ITiendaVirtualRepositorio.Insertar``1(``0)">
+            <summary>método Insertar.</summary>
+            <param name="entidad">parámetro entidad.</param>
+        </member>
+        <member name="M:TiendaVirtual.Entities.Interfaces.ITiendaVirtualRepositorio.Actualizar``1(``0)">
+            <summary>método Actualizar.</summary>
+            <param name="entidad">parámetro entidad.</param>
+        </member>
+        <member name="M:TiendaVirtual.Entities.Interfaces.ITiendaVirtualRepositorio.Eliminar``1(``0)">
+            <summary>método Eliminar.</summary>
+            <param name="entidad">parámetro entidad.</param>
+        </member>
+        <member name="M:TiendaVirtual.Entities.Interfaces.ITiendaVirtualRepositorio.ObtenerPorId``1(System.Int32)">
+            <summary>Método ObtenerPorId.</summary>
+            <param name="id">Parámetro id.</param>
+            <returns>Retorna tipo entidad a consultar.</returns>
+        </member>
+        <member name="M:TiendaVirtual.Entities.Interfaces.ITiendaVirtualRepositorio.ProcesarEstadoOrden(System.String)">
+            <summary>
+            Método ProcesarEstadoOrden.
+            </summary>        
+            <returns>Task{Status}</returns>
+        </member>
+    </members>
+</doc>

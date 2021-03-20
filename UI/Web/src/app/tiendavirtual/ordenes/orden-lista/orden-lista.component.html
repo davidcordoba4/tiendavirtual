@@ -1,0 +1,66 @@
+<notificacionesmensajes></notificacionesmensajes>
+<div class="panel panel-default" [@flyInOut]="'in'">
+    <div class="panel-heading alinear-titulo">
+        <div class="pull-right">
+
+            <button class="btn btn-default btn-xs" title="Refrescar" (click)="refrescar()">
+                <span class="fa fa-refresh"></span>
+            </button>
+
+            <button class="btn btn-primary btn-xs" title="Crear Orden" [routerLink]="['/ordenes/crear', false]">
+                <span class="fa fa-plus-square"></span>
+            </button>
+        </div>
+        Información de ordenes
+    </div>
+    <div class="horizontal-scroll">
+        <table class="table table-striped material dt" [mfData]="ordenes" #mf="mfDataTable" [mfRowsOnPage]="10">
+            <thead>
+                <tr>
+                    <th style="width: 16%">
+                        <mfDefaultSorter by="Customer_Name">Nombre Cliente</mfDefaultSorter>
+                    </th>
+                    <th style="width: 16%">
+                        <mfDefaultSorter by="Customer_Email">Correo Electrónico</mfDefaultSorter>
+                    </th>
+                    <th style="width: 16%">
+                        <mfDefaultSorter by="Customer_Mobile">Número Celular</mfDefaultSorter>
+                    </th>
+                    <th style="width: 16%">
+                        <mfDefaultSorter by="Created_At">Fecha Creación</mfDefaultSorter>
+                    </th>
+                    <th style="width: 16%">
+                        <mfDefaultSorter by="Updated_At">Fecha Actualización</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of mf.data">
+                    <td>{{item.Customer_Name}}</td>
+                    <td>{{item.Customer_Email}}</td>
+                    <td>{{item.Customer_Mobile}}</td>
+                    <td>{{item.Created_At | date:"dd/MM/yyyy h:mm:ss a"}}</td>
+                    <td>{{item.Updated_At | date:"dd/MM/yyyy h:mm:ss a"}}</td>
+                    <td class="text-right">
+                        <button class="btn btn-primary btn-xs" title="Visualizar Estado" [routerLink]="['/ordenes/visualizarestado', false, item.Id]">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div [hidden]="ordenes?.length > 0">
+        <div class="alert alert-info">
+            No hay registros para mostrar
+        </div>
+    </div>
+</div>

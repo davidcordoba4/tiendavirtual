@@ -1,0 +1,98 @@
+<notificacionesmensajes></notificacionesmensajes>
+<div class="content-heading">
+    Orden Pedido
+</div>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-sm-12">
+        <!-- START panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" [class.hidden]="!esVisualizacionEstado || esResumen">Visualizar Estado Orden
+                </h3>
+                <h3 class="panel-title" [class.hidden]="esVisualizacionEstado || esResumen">Creando</h3>
+                <h3 class="panel-title" [class.hidden]="!esResumen">Resumen Orden</h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+                <form role="form" #ordenForm="ngForm">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Nombre Cliente <i *ngIf="!esVisualizacionEstado && !esResumen" class="fa fa-asterisk"
+                                    aria-hidden="true"></i></label>
+                            <input autocomplete="off" #inputCustomer_Name [readonly]="camposSoloLectura"
+                                class="form-control" name="Customer_Name" [(ngModel)]="orden.Customer_Name"
+                                #Customer_Name="ngModel" required minlength="1" maxlength="80" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Correo Electrónico <i *ngIf="!esVisualizacionEstado && !esResumen"
+                                    class="fa fa-asterisk" aria-hidden="true"></i></label>
+                            <input autocomplete="off" class="form-control" name="Customer_Email"
+                                #Customer_Email="ngModel" email="true" [(ngModel)]="orden.Customer_Email"
+                                [readonly]="camposSoloLectura" required minlength="1" maxlength="120" />
+                            <div *ngIf="Customer_Email.errors?.email" class="alerta-error">
+                                <div>
+                                    Email Inválido
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Número Celular <i *ngIf="!esVisualizacionEstado && !esResumen" class="fa fa-asterisk"
+                                    aria-hidden="true"></i></label>
+                            <input autocomplete="off" class="form-control" name="Customer_Mobile"
+                                #Customer_Mobile="ngModel" [(ngModel)]="orden.Customer_Mobile"
+                                [readonly]="camposSoloLectura" required (keypress)="soloNumeros($event)" minlength="1"
+                                maxlength="15" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Producto </label>
+                            <input class="form-control" name="Producto" #Producto="ngModel" [(ngModel)]="producto"
+                                [readonly]="true" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Valor </label>
+                            <input class="form-control" type="text" currencyMask
+                                [options]="{ suffix:'', precision : '2' }" name="Valor" #Valor="ngModel"
+                                [(ngModel)]="valor" [readonly]="true" />
+                        </div>
+                        <div *ngIf="esVisualizacionEstado" class="form-group col-md-6">
+                            <label>Estado Pedido </label>
+                            <input class="form-control" type="text" name="EstadoPedido" #EstadoPedido="ngModel"
+                                [(ngModel)]="estadoPedido" [readonly]="true" />
+                        </div>
+                    </div>
+                    <div *ngIf="esVisualizacionEstado" class="row">
+                        <div class="form-group col-md-6">
+                            <label>Fecha Creación </label>
+                            <input class="form-control" type="text" value="{{orden.Created_At | date: 'dd/MM/yyyy h:mm:ss a'}}" [readonly]="true" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Fecha Actualización </label>
+                            <input class="form-control" type="text" value="{{orden.Updated_At | date: 'dd/MM/yyyy h:mm:ss a'}}" [readonly]="true" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer clearfix">
+
+                <a class='btn btn-default' (click)='volver()' style='width:80px'>
+                    <i class='glyphicon glyphicon-chevron-left'></i> Volver
+                </a>
+                <button *ngIf="!esVisualizacionEstado && !esResumen" class="btn btn-sm btn-primary pull-rigth"
+                    (click)="continuarResumen()" [disabled]="!ordenForm.form.valid">Continuar</button>
+                <button *ngIf="esResumen" class="btn btn-sm btn-primary pull-rigth" (click)="continuarPago()"
+                    [disabled]="!ordenForm.form.valid">Pagar</button>
+                <button *ngIf="esVisualizacionEstado && estadoPedido!='PAGO APROVADO'"
+                    class="btn btn-sm btn-primary pull-rigth" (click)="reintentarPago()"
+                    [disabled]="!ordenForm.form.valid">Reintentar</button>
+            </div>
+        </div>
+        <!-- END panel-->
+    </div>
+</div>

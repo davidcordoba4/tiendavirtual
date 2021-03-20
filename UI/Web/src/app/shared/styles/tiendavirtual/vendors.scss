@@ -1,0 +1,23 @@
+@import "./vendors/primeng";
+@import "./vendors/bootstrap";
+
+/*Sobre escribimos los estilos de primeng*/
+.ui-widget {
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+
+.fondo-transparente .ui-datalist-content.ui-widget-content{
+	border: none;
+	background-color: transparent;
+}
+  .ui-dialog-title {
+            font-family: "meltix_bold_demoregular";
+        }
+
+.label-small .ui-fieldset-content {
+            & .form-group {
+                & > label {
+                    font-size: 0.8em !important;
+                    }
+            }
+        }

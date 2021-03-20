@@ -1,0 +1,109 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng2tiendavirtual": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "src/app/core/preloader/preloader.scss",
+              "src/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.css"              
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jquery-slimscroll/jquery.slimscroll.js",
+              "node_modules/bxslider/dist/jquery.bxslider.js",
+              "node_modules/gasparesganga-jquery-loading-overlay/src/loadingoverlay.js",
+              "src/app/core/preloader/preloader.js",
+              "node_modules/hammerjs/hammer.min.js"
+            ]
+          },
+          "configurations": {
+            "devremote": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.devremote.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng2tiendavirtual:build"
+          },
+          "configurations": {
+            "devremote": {
+              "browserTarget": "ng2tiendavirtual:build:devremote"
+            }
+          }
+        }
+      }
+    },
+    "ng2tiendavirtual-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "ng2tiendavirtual:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng2tiendavirtual",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
+}
