@@ -42,16 +42,15 @@ export abstract class ServicioBaseService<T> {
     }
 
     TraerListaAnonima(body: any = null) : Promise<any[]> {
-        debugger;
         this.loadingService.showLoading();
         this.asignarOpcionesHeaders();
         const bodyString = JSON.stringify(body); // Stringify payload
-        return this.http.post(this.urlHost + this.EndPoint, body = null, this.options).toPromise()
+        return this.http.post(this.urlHost + this.EndPoint, bodyString, this.options).toPromise()
             .then(res => this.extraerDatoPromesa(res, this.notificacionesMensajeService, "", this))
             .catch(err => this.handleErrorPromise(err, this.notificacionesMensajeService, false, this));
     }
 
-    TraerAnonima(body: any): Promise<any> {
+    TraerAnonima(body: any = null): Promise<any> {
         this.loadingService.showLoading();
         this.asignarOpcionesHeaders();
         const bodyString = JSON.stringify(body); // Stringify payload

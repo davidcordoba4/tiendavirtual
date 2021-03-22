@@ -43,7 +43,6 @@ export class OrdenListaComponent implements OnInit {
     
     refrescar() {
         this.tiendaVirtualService.obtenerOrdenes().then(ordenes => {
-            debugger;
             this.ordenes = ordenes
         });
     }

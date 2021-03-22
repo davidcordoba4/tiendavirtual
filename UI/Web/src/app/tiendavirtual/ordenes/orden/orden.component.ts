@@ -33,7 +33,6 @@ export class OrdenComponent implements OnInit {
         this.orden = new Orders();
         this.sub = this.route.params.subscribe(
             params => {
-                debugger;
                 let id = params['id'] as number;
                 this.esResumen = JSON.parse(params['esResumen']) as boolean;
                 if (id && !this.esResumen) {
@@ -51,7 +50,6 @@ export class OrdenComponent implements OnInit {
 
     ObtenerOrdenTienda(id: number) {
         this.tiendaVirtualService.ObtenerOrdenTienda(id).then(orden => {
-            debugger;
             this.orden = orden;
             switch (this.orden.OrderStatus.Status_Description) {
                 case "PENDING":

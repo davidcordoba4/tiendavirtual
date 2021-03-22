@@ -16,8 +16,4 @@ export class OrdenesComponent implements OnInit {
     ngOnInit() {
    
     }
-
-    public removeItem(item: any) {
-        this.empresasDatos = _.filter(this.empresasDatos, (elem) => elem !== item);
-    }
 }
